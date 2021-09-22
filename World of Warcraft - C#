@@ -1,4 +1,4 @@
-// Main Program - where the variables are made and the scripting is executed
+// Main Program - where the variables are made and the scripting is executed.
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,7 +60,7 @@ namespace ConsoleApp23
     }
 }
 
-\\classes - where the classes are created, and variables that later become linked to the main program
+\\classes - where the classes are created, and variables that later become linked to the main program.
 using System;
 using System.Collections.Generic;
 using System.Linq;
