@@ -1,0 +1,108 @@
+// Main Program - where the variables are made and the scripting is executed
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp23
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Create the random number generators
+            Random rn = new Random();
+            int ElFormonixBaseAttack = rn.Next(1, 9);
+            int ElFormonixbasehealth = rn.Next(10, 41);
+            int ElFormonixattack = ElFormonixBaseAttack + rn.Next(0, 5);
+            int ElFormonixsetHealth = ElFormonixbasehealth - ElFormonixattack;
+            int LaFormonixBaseAttack = rn.Next(1, 9);
+            int LaFormonixbasehealth = rn.Next(10, 41);
+            int LaFormonixattack = LaFormonixBaseAttack + rn.Next(0, 5);
+            int LaFormonixsetHealth = LaFormonixbasehealth - LaFormonixattack;
+
+            //Create the orc classes
+            orc orc1 = new orc("ElFormonixOrc", ElFormonixbasehealth,  ElFormonixBaseAttack, 1, ElFormonixattack, ElFormonixsetHealth);
+            Console.WriteLine("Initial Status: ");
+            Console.WriteLine("Name: " + orc1.name);
+            Console.WriteLine("Attack: " + orc1.baseAttack);
+            Console.WriteLine("Health: " + orc1.Basehealth);
+            Console.WriteLine();
+            Console.WriteLine();
+
+            orc orc2 = new orc("LaFormonixOrc", LaFormonixbasehealth, LaFormonixBaseAttack, 1, LaFormonixattack, LaFormonixsetHealth);
+            Console.WriteLine("Name: " + orc2.name);
+            Console.WriteLine("Attack: " + orc2.baseAttack);
+            Console.WriteLine("Health: " + orc2.Basehealth);
+            Console.WriteLine();
+            Console.WriteLine();
+
+            //Start the action
+            Console.WriteLine("Fight begins!");
+            Console.WriteLine("ElFormonixorc causes " + ElFormonixattack + " damage to LaFormonixorc!");
+            Console.WriteLine("LaFormonixOrc fights back and causes " + LaFormonixattack + " damage to ElFormonixorc!");
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Name: " + orc1.name);
+            Console.WriteLine("Attack: " + orc1.baseAttack);
+            Console.WriteLine("Health: " + ElFormonixsetHealth);
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Name: " + orc2.name);
+            Console.WriteLine("Attack: " + orc2.baseAttack);
+            Console.WriteLine("Health: " + LaFormonixsetHealth);
+
+
+            Console.ReadKey();
+        }
+
+    }
+}
+
+\\classes - where the classes are created, and variables that later become linked to the main program
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp23
+{
+
+    class orc
+        
+    {
+        //create the basic variables, objects and methods
+        public string name;
+        public int Basehealth;
+        public int baseAttack;
+        public int currentHealth;
+        public int attack;
+        public int setHealth;
+
+        public orc (string a, int b, int c, int d, int e, int f)
+        {
+            name = a;
+            Basehealth = b;
+            baseAttack = c;
+            currentHealth = d;
+            attack = e;
+            setHealth = f;
+
+            if (f <= -1)
+            {
+                f = b;
+            }
+
+            else
+            {
+
+            }
+
+        }
+    }
+
+
+}
+
